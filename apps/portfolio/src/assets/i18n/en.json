@@ -1,0 +1,51 @@
+{
+  "APP": {
+    "LOGO": "Portfolio",
+    "FOOTER": "© 2025 Portfolio. All rights reserved."
+  },
+  "WELCOME_MESSAGE": "im umer, welcome to my page",
+  "INTRO": {
+    "ROLE": "Software Engineer",
+    "DESCRIPTION": "I build things for the web.",
+    "CTA_PRIMARY": "Get in Touch",
+    "CTA_SECONDARY": "View Work"
+  },
+  "NAV": {
+    "HOME": "Home",
+    "EXPERIENCE": "Experience",
+    "SKILLS": "Skills",
+    "CONTACT": "Contact"
+  },
+  "CONTACT": {
+    "TITLE": "Get In Touch",
+    "SUBTITLE": "Let's work together",
+    "DESCRIPTION": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "EMAIL_BUTTON": "Send Email",
+    "LINKEDIN_BUTTON": "Connect on LinkedIn",
+    "OR": "or"
+  },
+  "EXPERIENCE": {
+    "TITLE": "My Journey",
+    "BERN": {
+      "CITY": "Bern",
+      "ROLE": "Senior Developer",
+      "PERIOD": "2023 - Present",
+      "DESCRIPTION": "Leading frontend architecture and mentoring junior developers."
+    },
+    "MUNICH": {
+      "CITY": "Munich",
+      "ROLE": "Full Stack Developer",
+      "PERIOD": "2021 - 2023",
+      "DESCRIPTION": "Developed scalable web applications using Angular and Node.js."
+    },
+    "BIELEFELD": {
+      "CITY": "Bielefeld",
+      "ROLE": "Junior Developer",
+      "PERIOD": "2019 - 2021",
+      "DESCRIPTION": "Started the journey with Java and basic web technologies."
+    }
+  },
+  "SKILLS": {
+    "TITLE": "Technical Skills"
+  }
+}

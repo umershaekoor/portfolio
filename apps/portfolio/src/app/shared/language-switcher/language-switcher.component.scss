@@ -1,0 +1,62 @@
+.language-switcher {
+  margin-left: 4rem;
+  display: flex;
+  align-items: center;
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+.language-select {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus {
+    border-color: rgba(233, 69, 96, 0.5);
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+  }
+
+  option {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-left: 2rem;
+  }
+
+  .language-select {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}

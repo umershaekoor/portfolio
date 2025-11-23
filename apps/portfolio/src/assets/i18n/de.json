@@ -1,0 +1,51 @@
+{
+  "APP": {
+    "LOGO": "Portfolio",
+    "FOOTER": "© 2025 Portfolio. Alle Rechte vorbehalten."
+  },
+  "WELCOME_MESSAGE": "ich bin umer, willkommen auf meiner seite",
+  "INTRO": {
+    "ROLE": "Softwareentwickler",
+    "DESCRIPTION": "Ich entwickle Dinge für das Web.",
+    "CTA_PRIMARY": "Kontakt aufnehmen",
+    "CTA_SECONDARY": "Arbeiten ansehen"
+  },
+  "NAV": {
+    "HOME": "Startseite",
+    "EXPERIENCE": "Erfahrung",
+    "SKILLS": "Fähigkeiten",
+    "CONTACT": "Kontakt"
+  },
+  "CONTACT": {
+    "TITLE": "Kontakt aufnehmen",
+    "SUBTITLE": "Lass uns zusammenarbeiten",
+    "DESCRIPTION": "Ich bin immer offen für Gespräche über neue Projekte, kreative Ideen oder Möglichkeiten, Teil Ihrer Vision zu sein.",
+    "EMAIL_BUTTON": "E-Mail senden",
+    "LINKEDIN_BUTTON": "Auf LinkedIn verbinden",
+    "OR": "oder"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Meine Reise",
+    "BERN": {
+      "CITY": "Bern",
+      "ROLE": "Senior Entwickler",
+      "PERIOD": "2023 - Heute",
+      "DESCRIPTION": "Leitung der Frontend-Architektur und Mentoring von Junior-Entwicklern."
+    },
+    "MUNICH": {
+      "CITY": "München",
+      "ROLE": "Full Stack Entwickler",
+      "PERIOD": "2021 - 2023",
+      "DESCRIPTION": "Entwicklung skalierbarer Webanwendungen mit Angular und Node.js."
+    },
+    "BIELEFELD": {
+      "CITY": "Bielefeld",
+      "ROLE": "Junior Entwickler",
+      "PERIOD": "2019 - 2021",
+      "DESCRIPTION": "Beginn der Reise mit Java und grundlegenden Webtechnologien."
+    }
+  },
+  "SKILLS": {
+    "TITLE": "Technische Fähigkeiten"
+  }
+}

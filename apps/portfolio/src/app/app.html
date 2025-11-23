@@ -1,0 +1,31 @@
+
+<header class="header" [class.scrolled]="isScrolled">
+  <nav class="nav">
+    <ul class="nav-links">
+      <li [class.active]="activeSection === 'intro'" (click)="scrollTo('intro')" (keydown.enter)="scrollTo('intro')" tabindex="0">{{ 'NAV.HOME' | translate }}</li>
+      <li [class.active]="activeSection === 'experience'" (click)="scrollTo('experience')" (keydown.enter)="scrollTo('experience')" tabindex="0">{{ 'NAV.EXPERIENCE' | translate }}</li>
+      <li [class.active]="activeSection === 'skills'" (click)="scrollTo('skills')" (keydown.enter)="scrollTo('skills')" tabindex="0">{{ 'NAV.SKILLS' | translate }}</li>
+      <li [class.active]="activeSection === 'contact'" (click)="scrollTo('contact')" (keydown.enter)="scrollTo('contact')" tabindex="0">{{ 'NAV.CONTACT' | translate }}</li>
+    </ul>
+    <app-language-switcher></app-language-switcher>
+  </nav>
+</header>
+
+<main class="portfolio-container">
+  <section id="intro">
+    <app-intro></app-intro>
+  </section>
+  <section id="experience">
+    <app-experience></app-experience>
+  </section>
+  <section id="skills">
+    <app-skills></app-skills>
+  </section>
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+</main>
+
+<footer>
+  <p>{{ 'APP.FOOTER' | translate }}</p>
+</footer>

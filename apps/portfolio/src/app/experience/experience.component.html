@@ -1,0 +1,17 @@
+<div class="experience-container">
+    <h2 class="section-title" appScrollReveal>{{ 'EXPERIENCE.TITLE' | translate }}</h2>
+    <div class="timeline">
+        <div class="timeline-item" 
+             appScrollReveal
+             *ngFor="let exp of experiences; let i = index; trackBy: trackByIndex" 
+             [class.left]="i % 2 === 0"
+            [class.right]="i % 2 !== 0">
+            <div class="content">
+                <h3>{{ exp.cityKey | translate }}</h3>
+                <h4>{{ exp.roleKey | translate }}</h4>
+                <span class="date">{{ exp.periodKey | translate }}</span>
+                <p>{{ exp.descriptionKey | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>

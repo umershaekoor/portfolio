@@ -1,0 +1,51 @@
+{
+  "APP": {
+    "LOGO": "Portfolio",
+    "FOOTER": "© 2025 Portfolio. Tutti i diritti riservati."
+  },
+  "WELCOME_MESSAGE": "sono umer, benvenuto nella mia pagina",
+  "INTRO": {
+    "ROLE": "Ingegnere del Software",
+    "DESCRIPTION": "Costruisco cose per il web.",
+    "CTA_PRIMARY": "Contattami",
+    "CTA_SECONDARY": "Vedi il lavoro"
+  },
+  "NAV": {
+    "HOME": "Home",
+    "EXPERIENCE": "Esperienza",
+    "SKILLS": "Competenze",
+    "CONTACT": "Contatto"
+  },
+  "CONTACT": {
+    "TITLE": "Mettiti in contatto",
+    "SUBTITLE": "Lavoriamo insieme",
+    "DESCRIPTION": "Sono sempre aperto a discutere di nuovi progetti, idee creative o opportunità per far parte della tua visione.",
+    "EMAIL_BUTTON": "Invia email",
+    "LINKEDIN_BUTTON": "Connettiti su LinkedIn",
+    "OR": "o"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Il Mio Percorso",
+    "BERN": {
+      "CITY": "Berna",
+      "ROLE": "Sviluppatore Senior",
+      "PERIOD": "2023 - Presente",
+      "DESCRIPTION": "Guida dell'architettura frontend e mentoring degli sviluppatori junior."
+    },
+    "MUNICH": {
+      "CITY": "Monaco",
+      "ROLE": "Sviluppatore Full Stack",
+      "PERIOD": "2021 - 2023",
+      "DESCRIPTION": "Sviluppo di applicazioni web scalabili utilizzando Angular e Node.js."
+    },
+    "BIELEFELD": {
+      "CITY": "Bielefeld",
+      "ROLE": "Sviluppatore Junior",
+      "PERIOD": "2019 - 2021",
+      "DESCRIPTION": "Inizio del percorso con Java e tecnologie web di base."
+    }
+  },
+  "SKILLS": {
+    "TITLE": "Competenze Tecniche"
+  }
+}

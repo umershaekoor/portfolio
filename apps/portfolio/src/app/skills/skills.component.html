@@ -1,0 +1,14 @@
+<div class="skills-container">
+    <h2 class="section-title" appScrollReveal>{{ 'SKILLS.TITLE' | translate }}</h2>
+    <div class="skills-grid">
+        <div class="skill-card" appScrollReveal *ngFor="let skill of skills; trackBy: trackByName" [style.--icon-color]="skill.color">
+            <div class="icon">
+                <i [class]="skill.icon"></i>
+            </div>
+            <h3>{{ skill.name }}</h3>
+            <div class="progress-bar">
+                <div class="progress" [style.width.%]="skill.level"></div>
+            </div>
+        </div>
+    </div>
+</div>
