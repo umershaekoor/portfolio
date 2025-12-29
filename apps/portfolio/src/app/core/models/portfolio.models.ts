@@ -3,6 +3,21 @@ export interface Experience {
   readonly roleKey: string;
   readonly periodKey: string;
   readonly descriptionKey: string;
+  readonly isCurrent?: boolean;
+  readonly countryKey: string;
+  readonly periodFromKey: string;
+  readonly periodToKey: string;
+  readonly countryCode: string;
+  readonly mapPosition: {
+    readonly x: number;
+    readonly y: number;
+  };
+  readonly skills?: readonly ExperienceSkill[];
+}
+
+export interface ExperienceSkill {
+  readonly name: string;
+  readonly level: number; // 0-3, can be decimal (e.g., 1.5, 2.5)
 }
 
 export interface Skill {
@@ -10,6 +25,7 @@ export interface Skill {
   readonly level: number;
   readonly icon: string;
   readonly color?: string;
+  readonly url?: string; // Documentation or homepage URL
 }
 
 export interface Language {
@@ -29,6 +45,7 @@ export interface TranslationKey {
     readonly DESCRIPTION: string;
     readonly CTA_PRIMARY: string;
     readonly CTA_SECONDARY: string;
+    readonly CTA_JOURNEY: string;
   };
   readonly NAV: {
     readonly HOME: string;
@@ -41,6 +58,8 @@ export interface TranslationKey {
     readonly BERN: ExperienceData;
     readonly MUNICH: ExperienceData;
     readonly BIELEFELD: ExperienceData;
+    readonly CLAUSTHAL: ExperienceData;
+    readonly UNIVERSITY: ExperienceData;
   };
   readonly SKILLS: {
     readonly TITLE: string;
@@ -60,4 +79,7 @@ interface ExperienceData {
   readonly ROLE: string;
   readonly PERIOD: string;
   readonly DESCRIPTION: string;
+  readonly COUNTRY: string;
+  readonly FROM: string;
+  readonly TO: string;
 }

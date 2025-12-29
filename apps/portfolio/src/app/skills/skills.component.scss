@@ -1,69 +1,105 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/animations' as *;
+
+// ============================================
+// Skills Section
+// ============================================
+
 .skills-container {
-    padding: 5rem 2rem;
-    background: linear-gradient(180deg, #16213e 0%, #1a1a2e 100%);
-    color: white;
-    text-align: center;
+  padding: var(--spacing-4xl) var(--spacing-xl);
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  color: var(--color-text-primary);
+  text-align: center;
 
-    .section-title {
-        font-size: 3rem;
-        margin-bottom: 4rem;
-        color: #e94560;
-    }
+  .section-title {
+    @include section-title;
+  }
 
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
+  .skills-grid {
+    @include grid-auto-fit(200px, var(--spacing-lg));
+    max-width: 1200px;
+    margin: 0 auto;
 
-        .skill-card {
-            background: #16213e;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .skill-card {
+      @include card(var(--spacing-lg));
+      background: var(--color-bg-secondary);
+      text-align: center;
+      cursor: pointer; // Add pointer cursor on hover
+      text-decoration: none; // Remove default link underline
+      color: inherit; // Inherit text color
+      display: block; // Make anchor behave like block element
+      transition: all var(--transition-base);
 
-            .icon {
-                font-size: 3rem;
-                margin-bottom: 1rem;
-                color: rgba(255, 255, 255, 0.8);
-                transition: all 0.3s ease;
+      .icon {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-xs);
+        color: var(--color-text-secondary);
+        transition: all var(--transition-base);
 
-                i {
-                    transition: color 0.3s ease, filter 0.3s ease;
-                }
-            }
-
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3);
-
-                .icon {
-                    color: var(--icon-color, #e94560);
-                    filter: drop-shadow(0 0 10px var(--icon-color, #e94560));
-                }
-            }
-
-            h3 {
-                margin-bottom: 1.5rem;
-                font-size: 1.5rem;
-            }
-
-            .progress-bar {
-                width: 100%;
-                height: 10px;
-                background: #0f3460;
-                border-radius: 5px;
-                overflow: hidden;
-
-                .progress {
-                    height: 100%;
-                    background: linear-gradient(90deg, #e94560, #a2a8d3);
-                    border-radius: 5px;
-                    transition: width 1s ease-out;
-                }
-            }
+        i {
+          transition: color var(--transition-base), filter var(--transition-base);
         }
+      }
+
+      &:hover {
+        @include hover-lift;
+        transform: translateY(-8px) scale(1.02); // Enhanced lift effect
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); // Stronger shadow
+
+        .icon {
+          color: var(--icon-color, var(--color-primary));
+          filter: drop-shadow(0 0 10px var(--icon-color, var(--color-primary)));
+          transform: scale(1.1); // Slight icon scale on hover
+        }
+      }
+
+      &:active {
+        transform: translateY(-6px) scale(1.01); // Slight press effect
+      }
+
+      h3 {
+        margin-bottom: var(--spacing-sm);
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 10px;
+        background: rgba(15, 52, 96, 0.5);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+
+        .progress {
+          height: 100%;
+          background: var(--gradient-primary);
+          border-radius: var(--radius-sm);
+          transition: width 1s ease-out;
+        }
+      }
     }
+  }
 }
+
+// ============================================
+// Responsive Design
+// ============================================
+
+@include breakpoint('md') {
+  .skills-container {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: var(--spacing-lg) !important;
+  }
+}
+
+@include breakpoint('sm') {
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+

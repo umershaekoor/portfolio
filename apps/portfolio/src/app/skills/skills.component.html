@@ -1,7 +1,14 @@
 <div class="skills-container">
     <h2 class="section-title" appScrollReveal>{{ 'SKILLS.TITLE' | translate }}</h2>
     <div class="skills-grid">
-        <div class="skill-card" appScrollReveal *ngFor="let skill of skills; trackBy: trackByName" [style.--icon-color]="skill.color">
+        <a [href]="skill.url"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="skill-card"
+           appScrollReveal
+           *ngFor="let skill of skills; trackBy: trackByName"
+           [style.--icon-color]="skill.color"
+           [attr.aria-label]="'Learn more about ' + skill.name">
             <div class="icon">
                 <i [class]="skill.icon"></i>
             </div>
@@ -9,6 +16,6 @@
             <div class="progress-bar">
                 <div class="progress" [style.width.%]="skill.level"></div>
             </div>
-        </div>
+        </a>
     </div>
 </div>

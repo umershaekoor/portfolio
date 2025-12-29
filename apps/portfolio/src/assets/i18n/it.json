@@ -8,7 +8,8 @@
     "ROLE": "Ingegnere del Software",
     "DESCRIPTION": "Costruisco cose per il web.",
     "CTA_PRIMARY": "Contattami",
-    "CTA_SECONDARY": "Vedi il lavoro"
+    "CTA_SECONDARY": "Vedi il lavoro",
+    "CTA_JOURNEY": "Vedi il mio percorso"
   },
   "NAV": {
     "HOME": "Home",
@@ -26,23 +27,51 @@
   },
   "EXPERIENCE": {
     "TITLE": "Il Mio Percorso",
+    "CLOSE": "Chiudi scheda",
     "BERN": {
       "CITY": "Berna",
       "ROLE": "Sviluppatore Senior",
-      "PERIOD": "2023 - Presente",
-      "DESCRIPTION": "Guida dell'architettura frontend e mentoring degli sviluppatori junior."
+      "PERIOD": "2025 Mar - Presente",
+      "DESCRIPTION": "Sviluppo di funzionalità client complesse in full stack. Sviluppo frontend e backend con Angular e Spring Boot. Mentoring degli sviluppatori junior.",
+      "COUNTRY": "Svizzera",
+      "FROM": "Mar 2025",
+      "TO": "Presente"
     },
     "MUNICH": {
       "CITY": "Monaco",
       "ROLE": "Sviluppatore Full Stack",
-      "PERIOD": "2021 - 2023",
-      "DESCRIPTION": "Sviluppo di applicazioni web scalabili utilizzando Angular e Node.js."
+      "PERIOD": "2022 Apr - 2025 Feb",
+      "DESCRIPTION": "Sviluppo frontend e backend con Spring e Ember.js. Implementazione dell'autenticazione OAuth2 per il cluster applicativo.",
+      "COUNTRY": "Germania",
+      "FROM": "Apr 2022",
+      "TO": "Feb 2025"
     },
     "BIELEFELD": {
       "CITY": "Bielefeld",
       "ROLE": "Sviluppatore Junior",
-      "PERIOD": "2019 - 2021",
-      "DESCRIPTION": "Inizio del percorso con Java e tecnologie web di base."
+      "PERIOD": "2020 Mag - 2022 Mar",
+      "DESCRIPTION": "Inizio del percorso professionale con Java e tecnologie web di base.",
+      "COUNTRY": "Germania",
+      "FROM": "Mag 2020",
+      "TO": "Mar 2022"
+    },
+    "CLAUSTHAL": {
+      "CITY": "Clausthal-Zellerfeld",
+      "ROLE": "Assistente di Ricerca",
+      "PERIOD": "2018 - 2020",
+      "DESCRIPTION": "Sviluppo di applicazione Angular per il rilevamento di merci pericolose nel Mare del Nord. Progetto DAIMON - Ricerca sulla sicurezza marittima.",
+      "COUNTRY": "Germania",
+      "FROM": "2018",
+      "TO": "2020"
+    },
+    "UNIVERSITY": {
+      "CITY": "Studi Universitari",
+      "ROLE": "Fondamenti di Sviluppo Web",
+      "PERIOD": "2017 - 2018",
+      "DESCRIPTION": "Inizio del mio percorso nello sviluppo web durante gli studi universitari, apprendimento dei fondamenti di HTML, CSS e JavaScript attraverso corsi e progetti pratici.",
+      "COUNTRY": "Germania",
+      "FROM": "2017",
+      "TO": "2018"
     }
   },
   "SKILLS": {

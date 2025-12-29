@@ -8,7 +8,8 @@
     "ROLE": "Software Engineer",
     "DESCRIPTION": "I build things for the web.",
     "CTA_PRIMARY": "Get in Touch",
-    "CTA_SECONDARY": "View Work"
+    "CTA_SECONDARY": "View Work",
+    "CTA_JOURNEY": "View My Journey"
   },
   "NAV": {
     "HOME": "Home",
@@ -26,23 +27,51 @@
   },
   "EXPERIENCE": {
     "TITLE": "My Journey",
+    "CLOSE": "Close card",
     "BERN": {
       "CITY": "Bern",
       "ROLE": "Senior Developer",
-      "PERIOD": "2023 - Present",
-      "DESCRIPTION": "Leading frontend architecture and mentoring junior developers."
+      "PERIOD": "2025 Mar - Present",
+      "DESCRIPTION": "Developing complex client features across full stack. Frontend and backend development with Angular and Spring Boot. Mentoring junior developers.",
+      "COUNTRY": "Switzerland",
+      "FROM": "Mar 2025",
+      "TO": "Present"
     },
     "MUNICH": {
       "CITY": "Munich",
       "ROLE": "Full Stack Developer",
-      "PERIOD": "2021 - 2023",
-      "DESCRIPTION": "Developed scalable web applications using Angular and Node.js."
+      "PERIOD": "2022 Apr - 2025 Feb",
+      "DESCRIPTION": "Frontend and backend development using Spring and Ember.js. Implemented OAuth2 authentication for application cluster.",
+      "COUNTRY": "Germany",
+      "FROM": "Apr 2022",
+      "TO": "Feb 2025"
     },
     "BIELEFELD": {
       "CITY": "Bielefeld",
       "ROLE": "Junior Developer",
-      "PERIOD": "2019 - 2021",
-      "DESCRIPTION": "Started the journey with Java and basic web technologies."
+      "PERIOD": "2020 May - 2022 Mar",
+      "DESCRIPTION": "Began the professional journey with Java and basic web technologies.",
+      "COUNTRY": "Germany",
+      "FROM": "May 2020",
+      "TO": "Mar 2022"
+    },
+    "CLAUSTHAL": {
+      "CITY": "Clausthal-Zellerfeld",
+      "ROLE": "Research Assistant",
+      "PERIOD": "2018 - 2020",
+      "DESCRIPTION": "Developed Angular application for hazardous goods detection in the North Sea. DAIMON Project - Maritime safety research.",
+      "COUNTRY": "Germany",
+      "FROM": "2018",
+      "TO": "2020"
+    },
+    "UNIVERSITY": {
+      "CITY": "University Studies",
+      "ROLE": "Web Development Foundation",
+      "PERIOD": "2017 - 2018",
+      "DESCRIPTION": "Started my web development journey during university studies, learning HTML, CSS, and JavaScript fundamentals through coursework and practical projects.",
+      "COUNTRY": "Germany",
+      "FROM": "2017",
+      "TO": "2018"
     }
   },
   "SKILLS": {

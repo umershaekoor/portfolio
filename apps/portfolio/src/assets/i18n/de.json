@@ -8,7 +8,8 @@
     "ROLE": "Softwareentwickler",
     "DESCRIPTION": "Ich entwickle Dinge für das Web.",
     "CTA_PRIMARY": "Kontakt aufnehmen",
-    "CTA_SECONDARY": "Arbeiten ansehen"
+    "CTA_SECONDARY": "Arbeiten ansehen",
+    "CTA_JOURNEY": "Meine Reise ansehen"
   },
   "NAV": {
     "HOME": "Startseite",
@@ -26,23 +27,51 @@
   },
   "EXPERIENCE": {
     "TITLE": "Meine Reise",
+    "CLOSE": "Karte schließen",
     "BERN": {
       "CITY": "Bern",
       "ROLE": "Senior Entwickler",
-      "PERIOD": "2023 - Heute",
-      "DESCRIPTION": "Leitung der Frontend-Architektur und Mentoring von Junior-Entwicklern."
+      "PERIOD": "2025 Mär - Heute",
+      "DESCRIPTION": "Entwicklung komplexer Kundenfeatures im Full Stack. Frontend- und Backend-Entwicklung mit Angular und Spring Boot. Mentoring von Junior-Entwicklern.",
+      "COUNTRY": "Schweiz",
+      "FROM": "Mär 2025",
+      "TO": "Heute"
     },
     "MUNICH": {
       "CITY": "München",
       "ROLE": "Full Stack Entwickler",
-      "PERIOD": "2021 - 2023",
-      "DESCRIPTION": "Entwicklung skalierbarer Webanwendungen mit Angular und Node.js."
+      "PERIOD": "2022 Apr - 2025 Feb",
+      "DESCRIPTION": "Frontend- und Backend-Entwicklung mit Spring und Ember.js. Implementierung von OAuth2-Authentifizierung für Application Cluster.",
+      "COUNTRY": "Deutschland",
+      "FROM": "Apr 2022",
+      "TO": "Feb 2025"
     },
     "BIELEFELD": {
       "CITY": "Bielefeld",
       "ROLE": "Junior Entwickler",
-      "PERIOD": "2019 - 2021",
-      "DESCRIPTION": "Beginn der Reise mit Java und grundlegenden Webtechnologien."
+      "PERIOD": "2020 Mai - 2022 Mär",
+      "DESCRIPTION": "Beginn der professionellen Laufbahn mit Java und grundlegenden Webtechnologien.",
+      "COUNTRY": "Deutschland",
+      "FROM": "Mai 2020",
+      "TO": "Mär 2022"
+    },
+    "CLAUSTHAL": {
+      "CITY": "Clausthal-Zellerfeld",
+      "ROLE": "Wissenschaftlicher Mitarbeiter",
+      "PERIOD": "2018 - 2020",
+      "DESCRIPTION": "Entwicklung einer Angular-Anwendung zur Gefahrgut-Detektion in der Nordsee. DAIMON Projekt - Maritime Sicherheitsforschung.",
+      "COUNTRY": "Deutschland",
+      "FROM": "2018",
+      "TO": "2020"
+    },
+    "UNIVERSITY": {
+      "CITY": "Universitätsstudium",
+      "ROLE": "Webentwicklung Grundlagen",
+      "PERIOD": "2017 - 2018",
+      "DESCRIPTION": "Beginn meiner Webentwicklungs-Reise während des Universitätsstudiums, mit Erlernen von HTML, CSS und JavaScript Grundlagen durch Kurse und praktische Projekte.",
+      "COUNTRY": "Deutschland",
+      "FROM": "2017",
+      "TO": "2018"
     }
   },
   "SKILLS": {

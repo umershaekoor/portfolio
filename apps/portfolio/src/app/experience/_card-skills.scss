@@ -1,0 +1,64 @@
+// ============================================
+// Skills Section in Expanded Card
+// ============================================
+
+.skills-section {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+
+    .skill-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-md);
+        font-size: var(--font-size-xs);
+        transition: all var(--transition-fast);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .skill-name {
+            color: var(--color-text-primary);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .skill-level {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+
+            .level-dash {
+                font-size: var(--font-size-sm);
+                line-height: 1;
+                color: var(--color-text-muted);
+                opacity: 0.3;
+                transition: opacity var(--transition-fast);
+
+                &.full {
+                    opacity: 1;
+                    color: var(--color-primary);
+                }
+
+                &.half {
+                    opacity: 0.6;
+                    color: var(--color-primary);
+                }
+
+                &.empty {
+                    opacity: 0.2;
+                }
+            }
+        }
+    }
+}
+

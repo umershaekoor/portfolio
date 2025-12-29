@@ -1,0 +1,49 @@
+// ============================================
+// Hover Hints (Desktop and Mobile)
+// ============================================
+
+.hover-hint {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    opacity: 0.7;
+    transition: all var(--transition-fast);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--color-primary);
+        }
+    }
+
+    .text {
+        font-weight: var(--font-weight-medium);
+    }
+
+    // Show only desktop hint by default
+    &.hover-hint-mobile {
+        display: none;
+    }
+}
+

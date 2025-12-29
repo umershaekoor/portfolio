@@ -8,7 +8,8 @@
     "ROLE": "Ingénieur Logiciel",
     "DESCRIPTION": "Je construis des choses pour le web.",
     "CTA_PRIMARY": "Me contacter",
-    "CTA_SECONDARY": "Voir mon travail"
+    "CTA_SECONDARY": "Voir mon travail",
+    "CTA_JOURNEY": "Voir mon parcours"
   },
   "NAV": {
     "HOME": "Accueil",
@@ -26,23 +27,51 @@
   },
   "EXPERIENCE": {
     "TITLE": "Mon Parcours",
+    "CLOSE": "Fermer la carte",
     "BERN": {
       "CITY": "Berne",
       "ROLE": "Développeur Senior",
-      "PERIOD": "2023 - Présent",
-      "DESCRIPTION": "Direction de l'architecture frontend et mentorat des développeurs juniors."
+      "PERIOD": "2025 Mar - Présent",
+      "DESCRIPTION": "Développement de fonctionnalités clients complexes en full stack. Développement frontend et backend avec Angular et Spring Boot. Mentorat des développeurs juniors.",
+      "COUNTRY": "Suisse",
+      "FROM": "Mar 2025",
+      "TO": "Présent"
     },
     "MUNICH": {
       "CITY": "Munich",
       "ROLE": "Développeur Full Stack",
-      "PERIOD": "2021 - 2023",
-      "DESCRIPTION": "Développement d'applications web évolutives avec Angular et Node.js."
+      "PERIOD": "2022 Avr - 2025 Fév",
+      "DESCRIPTION": "Développement frontend et backend avec Spring et Ember.js. Implémentation de l'authentification OAuth2 pour le cluster d'applications.",
+      "COUNTRY": "Allemagne",
+      "FROM": "Avr 2022",
+      "TO": "Fév 2025"
     },
     "BIELEFELD": {
       "CITY": "Bielefeld",
       "ROLE": "Développeur Junior",
-      "PERIOD": "2019 - 2021",
-      "DESCRIPTION": "Début du parcours avec Java et les technologies web de base."
+      "PERIOD": "2020 Mai - 2022 Mar",
+      "DESCRIPTION": "Début du parcours professionnel avec Java et les technologies web de base.",
+      "COUNTRY": "Allemagne",
+      "FROM": "Mai 2020",
+      "TO": "Mar 2022"
+    },
+    "CLAUSTHAL": {
+      "CITY": "Clausthal-Zellerfeld",
+      "ROLE": "Assistant de Recherche",
+      "PERIOD": "2018 - 2020",
+      "DESCRIPTION": "Développement d'une application Angular pour la détection de marchandises dangereuses en mer du Nord. Projet DAIMON - Recherche sur la sécurité maritime.",
+      "COUNTRY": "Allemagne",
+      "FROM": "2018",
+      "TO": "2020"
+    },
+    "UNIVERSITY": {
+      "CITY": "Études Universitaires",
+      "ROLE": "Fondements du Développement Web",
+      "PERIOD": "2017 - 2018",
+      "DESCRIPTION": "Début de mon parcours en développement web pendant mes études universitaires, apprentissage des fondamentaux HTML, CSS et JavaScript à travers des cours et projets pratiques.",
+      "COUNTRY": "Allemagne",
+      "FROM": "2017",
+      "TO": "2018"
     }
   },
   "SKILLS": {

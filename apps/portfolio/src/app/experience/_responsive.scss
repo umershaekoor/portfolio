@@ -1,0 +1,330 @@
+// ============================================
+// Mobile & Tablet Responsive Styles
+// ============================================
+
+@use '../../styles/mixins' as *;
+
+// Tablet breakpoint (md)
+@include breakpoint('md') {
+    .experience-container {
+        padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-lg); // Increased bottom padding to 2xl for more height
+        min-height: auto; // Remove 100vh constraint on mobile - let content determine height
+        width: 100%; // Ensure full width
+        max-width: 100vw; // Don't exceed viewport
+        box-sizing: border-box; // Include padding in width calculation
+
+        // Section header with mobile hint below title
+        .section-header {
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        // Hide desktop hint (bottom right) on mobile
+        .hover-hint-desktop {
+            display: none;
+        }
+
+        // Show mobile hint (inside section-header, below title)
+        .hover-hint-mobile {
+            display: inline-flex;
+            position: static;
+            bottom: auto;
+            right: auto;
+            padding: 4px 10px;
+            font-size: 11px;
+            gap: 4px;
+
+            .icon {
+                font-size: 14px;
+                line-height: 1;
+            }
+
+            .text {
+                line-height: 1;
+                white-space: nowrap;
+            }
+        }
+
+        &.has-expanded {
+            .timeline-item {
+                width: 100%;
+            }
+        }
+
+        .timeline {
+            padding: 0;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box; // Include any border/padding in width
+            overflow: hidden; // Clip any overflow from timeline itself
+
+            // Keep vertical line in center
+            &::after {
+                left: 50%;
+                margin-left: -3px;
+            }
+        }
+
+        .timeline-item {
+            // Keep 50% width for left/right layout
+            width: 50%;
+            padding: var(--spacing-md) 0;
+            box-sizing: border-box; // Include padding in width calculation
+            overflow: visible; // Allow cards to be visible but not cause scroll
+
+            // Remove connector lines on mobile (::before)
+            &::before {
+                display: none;
+            }
+
+            // Keep left/right positioning
+            &.left {
+                left: 0;
+                text-align: right;
+                padding-right: 8px;
+
+                // Transform dot into horizontal line connector
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: -3px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 6px;
+                    height: 2px;
+                    background: rgba(233, 69, 96, 0.7);
+                    border-radius: 0;
+                    border: none;
+                    box-shadow: none;
+                    z-index: 5;
+                }
+
+                .card-shell {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                .card-collapsed {
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
+
+                .location-summary {
+                    align-items: flex-end;
+                    text-align: right;
+                }
+            }
+
+            &.right {
+                left: 50%;
+                text-align: left;
+                padding-left: 8px;
+
+                // Transform dot into horizontal line connector
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: -3px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 6px;
+                    height: 2px;
+                    background: rgba(233, 69, 96, 0.7);
+                    border-radius: 0;
+                    border: none;
+                    box-shadow: none;
+                    z-index: 5;
+                }
+
+                .card-shell {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                .card-collapsed {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .location-summary {
+                    align-items: flex-start;
+                    text-align: left;
+                }
+            }
+
+            // Green lines for current position
+            &.current {
+                &.left::after,
+                &.right::after {
+                    background: rgba(34, 197, 94, 0.8);
+                }
+            }
+
+            &:focus-visible .card-shell {
+                box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.35);
+            }
+
+            // Mobile-specific card adjustments
+            .card-shell {
+                max-width: 154px; // 70% of desktop 220px
+                box-sizing: border-box; // Include border/padding in width
+            }
+
+            .card-collapsed {
+                padding: calc(var(--spacing-sm) + 8px) var(--spacing-md); // +3px vertical padding
+                gap: var(--spacing-xs);
+
+                .location-summary {
+                    .city {
+                        font-size: var(--font-size-md); // Increased from var(--font-size-sm)
+                        font-weight: var(--font-weight-semibold);
+                        padding-top: var(--spacing-xs); // Added padding above title
+                    }
+
+                    .dates {
+                        font-size: var(--font-size-sm); // Increased from var(--font-size-xs)
+                        gap: var(--spacing-xs);
+                        flex-wrap: wrap;
+                        padding-bottom: var(--spacing-xs); // Added padding below time range
+                    }
+
+                    .separator {
+                        font-size: var(--font-size-sm); // Increased from var(--font-size-xs)
+                    }
+                }
+            }
+
+            .card-expanded {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: min(92vw, 600px);
+                max-height: 80vh;
+                overflow-y: auto;
+
+                .card-header {
+                    flex-direction: column;
+                    gap: var(--spacing-md);
+
+                    .card-title {
+                        h3 {
+                            font-size: var(--font-size-lg);
+                        }
+
+                        .location {
+                            font-size: var(--font-size-sm);
+                        }
+                    }
+
+                    .header-actions {
+                        width: 100%;
+                        justify-content: center;
+
+                        .location-map {
+                            width: 100%;
+                            max-width: 200px;
+                        }
+                    }
+                }
+
+                .description {
+                    font-size: var(--font-size-sm);
+                    line-height: var(--line-height-normal);
+                }
+
+                .skills-section {
+                    gap: var(--spacing-xs);
+
+                    .skill-badge {
+                        padding: 4px var(--spacing-xs);
+                        font-size: 10px;
+
+                        .skill-name {
+                            font-size: 10px;
+                        }
+
+                        .skill-level .level-dash {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+
+            &.expanded .card-expanded {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+        }
+    }
+}
+
+// Small mobile breakpoint (sm)
+@include breakpoint('sm') {
+    .experience-container {
+        padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl) var(--spacing-md); // Increased bottom padding to xl for more height
+        min-height: auto; // Remove 100vh constraint - let content determine height
+        width: 100%; // Ensure full width
+        max-width: 100vw; // Don't exceed viewport
+        box-sizing: border-box; // Include padding in width calculation
+
+        .timeline-item {
+            padding: var(--spacing-md) 0;
+
+            &.left {
+                padding-right: 8px;
+            }
+
+            &.right {
+                padding-left: 8px;
+            }
+
+            .card-collapsed {
+                padding: var(--spacing-xs) var(--spacing-sm);
+
+                .location-summary {
+                    .city {
+                        font-size: 13px; // Increased from 11px
+                        padding-top: var(--spacing-xs); // Added padding above title
+                    }
+
+                    .dates {
+                        font-size: 11px; // Increased from 9px
+                        gap: 3px;
+                        padding-bottom: var(--spacing-xs); // Added padding below time range
+                    }
+                }
+            }
+
+            .card-expanded {
+                width: min(95vw, 500px);
+                max-height: 85vh;
+                padding: var(--spacing-md);
+
+                .card-header {
+                    .card-title h3 {
+                        font-size: var(--font-size-md);
+                    }
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                .skills-section .skill-badge {
+                    padding: 3px 6px;
+                    font-size: 9px;
+
+                    .skill-name,
+                    .skill-level .level-dash {
+                        font-size: 9px;
+                    }
+                }
+            }
+        }
+    }
+}
+

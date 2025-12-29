@@ -1,121 +1,166 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+@use '../styles/animations' as *;
+
 :host {
   display: block;
-  font-family: 'Inter', sans-serif;
-  color: #e0e0e0;
-  background-color: #121212;
+  font-family: var(--font-family-secondary);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-dark);
   min-height: 100vh;
 }
+
+// ============================================
+// Header & Navigation
+// ============================================
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(18, 18, 18, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  transition: background 0.3s ease, padding 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md) var(--spacing-xl);
+  @include glass(var(--color-backdrop), blur(10px));
+  z-index: var(--z-fixed);
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--transition-base);
 
   &.scrolled {
-    padding: 0.5rem 2rem;
+    padding: var(--spacing-sm) var(--spacing-xl);
     background: rgba(18, 18, 18, 0.95);
+    box-shadow: var(--shadow-md);
   }
 
   .nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
-    gap: 2rem;
+    padding: 0 var(--spacing-xl);
+    gap: var(--spacing-xl);
     flex-wrap: wrap;
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: var(--spacing-xl);
       list-style: none;
       margin: 0;
       padding: 0;
 
       li {
         cursor: pointer;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        font-weight: 500;
-        color: #a0a0a0;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--radius-md);
+        transition: all var(--transition-base);
+        font-weight: var(--font-weight-medium);
+        color: var(--color-text-muted);
+        position: relative;
+
+        // Hover indicator
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: var(--color-primary);
+          transition: all var(--transition-base);
+          transform: translateX(-50%);
+        }
 
         &:hover,
         &.active {
-          background: rgba(233, 69, 96, 0.2);
-          color: #e94560;
+          color: var(--color-primary);
+          background: rgba(233, 69, 96, 0.1);
+
+          &::after {
+            width: 60%;
+          }
         }
+
+        // Focus visible for accessibility
+        @include focus-visible;
       }
     }
   }
 }
+
+// ============================================
+// Main Content
+// ============================================
 
 .portfolio-container {
   padding-top: 80px;
 }
 
 section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include section-container;
 }
+
+// ============================================
+// Footer
+// ============================================
 
 footer {
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(180deg, #16213e 0%, #0f0f1e 100%);
-  color: #999;
-  font-size: 0.9rem;
+  padding: var(--spacing-xl);
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  border-top: 1px solid var(--color-border);
 }
 
-// Mobile responsive
-@media (max-width: 768px) {
+// ============================================
+// Responsive Design
+// ============================================
+
+@include breakpoint('md') {
   .header {
     .nav {
-      padding: 0 1rem;
-      gap: 1rem;
+      padding: 0 var(--spacing-md);
+      gap: var(--spacing-md);
 
       .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
+        gap: var(--spacing-md);
+        font-size: var(--font-size-sm);
 
         li {
-          padding: 0.4rem 0.75rem;
+          padding: var(--spacing-xs) var(--spacing-sm);
         }
       }
     }
   }
 }
 
-@media (max-width: 480px) {
+@include breakpoint('sm') {
   .header {
+    padding: var(--spacing-sm) var(--spacing-md);
+
+    &.scrolled {
+      padding: var(--spacing-xs) var(--spacing-md);
+    }
+
     .nav {
       flex-direction: column;
-      gap: 0.75rem;
-      padding: 0.75rem 1rem;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-sm) var(--spacing-md);
 
       .nav-links {
-        gap: 0.5rem;
+        gap: var(--spacing-sm);
         flex-wrap: wrap;
         justify-content: center;
-        font-size: 0.85rem;
+        font-size: var(--font-size-xs);
 
         li {
-          padding: 0.35rem 0.65rem;
+          padding: var(--spacing-xs) var(--spacing-sm);
         }
       }
     }
   }
+
+  .portfolio-container {
+    padding-top: 120px; // Adjust for taller mobile header
+  }
 }
+
+

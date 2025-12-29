@@ -1,0 +1,24 @@
+// ============================================
+// Section Header and Title
+// ============================================
+
+@use '../../styles/mixins' as *;
+
+.section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    @include section-title;
+
+    & {
+        margin-bottom: 0;
+    }
+}
+

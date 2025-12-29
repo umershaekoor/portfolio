@@ -1,0 +1,135 @@
+// ============================================
+// Timeline Item (Desktop) - Base Structure
+// ============================================
+
+.timeline-item {
+    padding: var(--spacing-xl) 0; // Reverted to original desktop spacing
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+    z-index: 1;
+    cursor: pointer;
+    outline: none;
+
+    &:focus-visible {
+        .card-shell {
+            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.35);
+        }
+    }
+
+    // Connector line from dot to card
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        height: 2px;
+        background: linear-gradient(90deg,
+            rgba(233, 69, 96, 0.6) 0%,
+            rgba(233, 69, 96, 0.2) 100%);
+        z-index: 0;
+    }
+
+    // Left-side cards
+    &.left {
+        left: 0;
+        text-align: right;
+        padding-right: 60px;
+
+        &::before {
+            right: 47.5px;
+            transform: translateY(-50%);
+        }
+
+        .card-shell {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .card-collapsed {
+            flex-direction: row-reverse;
+        }
+
+        .location-summary {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        // Timeline dot
+        &::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: var(--color-primary);
+            border: 4px solid var(--color-bg-primary);
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.2);
+        }
+    }
+
+    // Right-side cards
+    &.right {
+        left: 50%;
+        text-align: left;
+        padding-left: 60px;
+
+        &::before {
+            left: 47.5px;
+            transform: translateY(-50%) scaleX(-1);
+        }
+
+        .card-shell {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .location-summary {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        // Timeline dot
+        &::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            left: -12.5px;
+            background-color: var(--color-primary);
+            border: 4px solid var(--color-bg-primary);
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.2);
+        }
+    }
+
+    // Expanded state
+    &.expanded {
+        z-index: 10;
+
+        .card-shell {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.45);
+        }
+
+        .card-expanded {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .card-collapsed {
+            opacity: 0.15;
+            filter: blur(1px);
+        }
+    }
+}
+

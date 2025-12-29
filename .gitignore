@@ -59,3 +59,4 @@ lerna-debug.log*
 .cursor/rules/nx-rules.mdc
 
 vitest.config.*.timestamp*
+.angular

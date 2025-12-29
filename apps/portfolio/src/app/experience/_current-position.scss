@@ -1,0 +1,34 @@
+// ============================================
+// Current Position Styling (Green Theme)
+// ============================================
+
+.timeline-item.current {
+    // Green connector line
+    &::before {
+        background: linear-gradient(90deg,
+            rgba(34, 197, 94, 0.6) 0%,
+            rgba(34, 197, 94, 0.2) 100%);
+    }
+
+    // Green timeline dot (no pulse animation on mobile)
+    &::after {
+        background: linear-gradient(135deg, var(--color-success) 0%, #10b981 100%);
+        border-color: var(--color-bg-primary);
+        box-shadow: none;
+        animation: none;
+    }
+
+    // Green card styling
+    .card-shell {
+        border-color: rgba(34, 197, 94, 0.4);
+        box-shadow: 0 30px 60px rgba(34, 197, 94, 0.25);
+    }
+
+    // Green map marker
+    .location-map .marker {
+        background: var(--color-success);
+        box-shadow: 0 0 15px rgba(34, 197, 94, 0.9),
+                    0 0 0 3px rgba(34, 197, 94, 0.5);
+    }
+}
+

@@ -1,16 +1,28 @@
 <div class="language-switcher">
-  <label for="language-select" class="visually-hidden">Select Language</label>
-  <select 
-    id="language-select"
-    class="language-select"
-    [value]="currentLang" 
-    (change)="switchLanguage($event)"
-    aria-label="Language selector">
-    <option 
-      *ngFor="let lang of languages" 
-      [value]="lang.code"
-      [selected]="lang.code === currentLang">
-      {{ lang.flag }} {{ lang.label }}
-    </option>
-  </select>
+  <!-- Native select for desktop -->
+  <div class="native-select-wrapper">
+    <label for="language-select" class="visually-hidden">Select Language</label>
+    <select
+      id="language-select"
+      class="language-select"
+      [value]="currentLang"
+      (change)="switchLanguage($event)"
+      aria-label="Language selector">
+      <option
+        *ngFor="let lang of languages"
+        [value]="lang.code"
+        [selected]="lang.code === currentLang">
+        {{ lang.flag }} {{ lang.label }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Custom select for mobile -->
+  <div class="custom-select-wrapper">
+    <app-custom-select
+      [languages]="languages"
+      [currentLang]="currentLang"
+      (languageChange)="onCustomLanguageChange($event)">
+    </app-custom-select>
+  </div>
 </div>

@@ -1,0 +1,50 @@
+// ============================================
+// Experience Cards - Collapsed State
+// ============================================
+
+.card-shell {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: visible;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(7, 12, 24, 0.85);
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25);
+    transition: box-shadow var(--transition-base);
+    max-width: 220px; // Reverted to original desktop width
+
+    &:hover {
+        box-shadow: 0 30px 60px rgba(15, 23, 42, 0.35);
+    }
+}
+
+.card-collapsed {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: calc(var(--spacing-sm) + 5px) var(--spacing-md); // Reverted to original desktop padding
+    align-items: center;
+    transition: opacity var(--transition-fast);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.location-summary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    width: 100%;
+
+    .city {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .dates {
+        display: inline-flex;
+        gap: var(--spacing-xs);
+        color: var(--color-text-muted);
+        font-size: var(--font-size-sm);
+    }
+}
+
