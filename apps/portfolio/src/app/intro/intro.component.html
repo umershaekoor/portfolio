@@ -8,30 +8,28 @@
 
     <div class="intro-content">
         <div class="text-content">
-            <div class="greeting">{{ 'WELCOME_MESSAGE' | translate }}</div>
+            <div class="greeting">
+                <div class="typewriter-line">
+                    <span *ngFor="let char of greetingChars; let i = index"
+                          class="char"
+                          [style.animation-delay]="(0.5 + i * 0.12) + 's'">{{ char }}</span>
+                </div>
+                <div class="typewriter-line-2">{{ 'WELCOME_SUBTITLE' | translate }}</div>
+            </div>
             <h1 class="main-title">
                 <span class="title-line">Building Digital</span>
                 <span class="title-line gradient-text">Experiences</span>
             </h1>
             <p class="role-badge">
-                <span class="badge-dot"></span>
                 {{ 'INTRO.ROLE' | translate }}
             </p>
 
             <div class="cta-group">
                 <a href="#contact" class="btn btn-primary">
                     {{ 'INTRO.CTA_PRIMARY' | translate }}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
                 </a>
                 <a href="#experience" class="btn btn-secondary">
                     {{ 'INTRO.CTA_JOURNEY' | translate }}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2v20M2 12h20"></path>
-                        <circle cx="12" cy="12" r="10"></circle>
-                    </svg>
                 </a>
             </div>
         </div>

@@ -7,10 +7,10 @@
 // ============================================
 
 .contact-container {
-  min-height: 100vh;
+  min-height: 100dvh;
   @include flex-center;
   background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-primary) 50%, var(--color-bg-secondary) 100%);
-  padding: var(--spacing-3xl) var(--spacing-xl);
+  padding: var(--spacing-2xl) var(--spacing-xl);
   position: relative;
 }
 
@@ -37,7 +37,7 @@
   @include flex-center;
   box-shadow: var(--shadow-primary);
 
-  svg {
+  img {
     color: var(--color-text-primary);
   }
 }
@@ -118,7 +118,7 @@
 
   @include focus-visible;
 
-  svg {
+  img {
     width: 20px;
     height: 20px;
   }
@@ -167,7 +167,7 @@
   padding: var(--spacing-2xl);
   animation: scaleIn 0.5s ease-out;
 
-  svg {
+  img {
     color: var(--color-success);
     margin-bottom: var(--spacing-lg);
   }
@@ -195,7 +195,7 @@
   color: #fca5a5;
   font-size: var(--font-size-sm);
 
-  svg {
+  img {
     flex-shrink: 0;
   }
 }
@@ -225,7 +225,7 @@
     @include button-secondary;
   }
 
-  svg {
+  img {
     width: 20px;
     height: 20px;
   }
@@ -246,6 +246,11 @@
 // ============================================
 
 @include breakpoint('md') {
+  .contact-container {
+    min-height: auto;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+
   .form-container {
     padding: var(--spacing-xl);
   }
@@ -273,7 +278,10 @@
 
 @include breakpoint('sm') {
   .contact-container {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-2xl) var(--spacing-md);
+    min-height: auto;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-2xl);
   }
 
   .glass-card {
@@ -290,6 +298,54 @@
 
   .subtitle {
     font-size: var(--font-size-base);
+  }
+
+  // Form-specific mobile styles
+  .form-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .close-button {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 32px;
+    height: 32px;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .form-group {
+    label {
+      font-size: var(--font-size-sm);
+    }
+
+    input,
+    textarea {
+      font-size: var(--font-size-sm);
+      padding: var(--spacing-sm);
+
+      &::placeholder {
+        font-size: var(--font-size-sm);
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+  }
+
+  .success-message {
+    h3 {
+      font-size: var(--font-size-xl);
+    }
+
+    p {
+      font-size: var(--font-size-sm);
+    }
   }
 }
 

@@ -30,3 +30,6 @@
 // Responsive styles (mobile & tablet)
 @use 'responsive';
 
+// Mobile-specific expanded card overrides
+@use 'card-expanded-mobile';
+

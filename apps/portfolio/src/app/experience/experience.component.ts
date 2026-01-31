@@ -31,6 +31,13 @@ export class ExperienceComponent {
   expandedCardIndex: number | null = null;
 
   /**
+   * Check if current viewport is mobile/tablet (768px or less)
+   */
+  get isMobileView(): boolean {
+    return typeof window !== 'undefined' && window.innerWidth <= 768;
+  }
+
+  /**
    * TrackBy function for ngFor performance optimization
    */
   trackByIndex(index: number): number {
@@ -94,11 +101,13 @@ export class ExperienceComponent {
 
   toggleExpansion(index: number): void {
     this.expandedCardIndex = this.expandedCardIndex === index ? null : index;
+    this.cdr.markForCheck(); // Trigger change detection
   }
 
   collapse(index?: number): void {
     if (index === undefined || this.expandedCardIndex === index) {
       this.setExpanded(null);
+      this.cdr.markForCheck(); // Trigger change detection
     }
   }
 
@@ -110,6 +119,7 @@ export class ExperienceComponent {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       this.toggleExpansion(index);
+      this.cdr.markForCheck(); // Trigger change detection
     }
   }
 

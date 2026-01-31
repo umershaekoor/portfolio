@@ -2,6 +2,8 @@
 // Timeline Item (Desktop) - Base Structure
 // ============================================
 
+@use '../../styles/mixins' as *;
+
 .timeline-item {
     padding: var(--spacing-xl) 0; // Reverted to original desktop spacing
     position: relative;
@@ -11,6 +13,14 @@
     z-index: 1;
     cursor: pointer;
     outline: none;
+    // Ensure the hover area is constrained to actual content
+    // This prevents hover from triggering too early
+    pointer-events: none;
+
+    // Re-enable pointer events for the actual card content
+    .card-shell {
+        pointer-events: auto;
+    }
 
     &:focus-visible {
         .card-shell {
@@ -29,6 +39,7 @@
             rgba(233, 69, 96, 0.6) 0%,
             rgba(233, 69, 96, 0.2) 100%);
         z-index: 0;
+        pointer-events: none; // Don't interfere with hover detection
     }
 
     // Left-side cards
@@ -70,6 +81,7 @@
             border-radius: 50%;
             z-index: 10;
             box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.2);
+            pointer-events: none; // Don't interfere with hover detection
         }
     }
 
@@ -108,27 +120,50 @@
             border-radius: 50%;
             z-index: 10;
             box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.2);
+            pointer-events: none; // Don't interfere with hover detection
         }
     }
 
-    // Expanded state
-    &.expanded {
-        z-index: 10;
+    // Expanded state (desktop only - mobile has separate rules below)
+    @media (min-width: 768px) {
+        &.expanded {
+            z-index: 10;
 
-        .card-shell {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.45);
+            .card-shell {
+                transform: translateY(-6px) scale(1.01);
+                box-shadow: 0 35px 70px rgba(0, 0, 0, 0.45);
+            }
+
+            .card-expanded {
+                opacity: 1;
+                transform: translate(-50%, -50%) translateY(0);
+                pointer-events: auto;
+            }
+
+            .card-collapsed {
+                opacity: 0.15;
+                filter: blur(1px);
+            }
         }
+    }
 
-        .card-expanded {
-            opacity: 1;
-            transform: translate(-50%, -50%) translateY(0);
-            pointer-events: auto;
-        }
+    // Mobile expanded state (for opacity and pointer-events)
+    @media (max-width: 767px) {
+        // Enable pointer-events on mobile to fix double-click issue
+        pointer-events: auto;
 
-        .card-collapsed {
-            opacity: 0.15;
-            filter: blur(1px);
+        &.expanded {
+            z-index: 10;
+
+            .card-expanded {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .card-collapsed {
+                opacity: 0.15;
+                filter: blur(1px);
+            }
         }
     }
 }

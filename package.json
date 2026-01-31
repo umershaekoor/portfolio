@@ -2,7 +2,13 @@
   "name": "@portfolio-site/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve portfolio",
+    "build": "nx build portfolio",
+    "build:prod": "nx build portfolio --configuration=production",
+    "test": "nx test portfolio",
+    "lint": "nx lint portfolio"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~20.3.0",

@@ -19,6 +19,7 @@
     transition: all var(--transition-fast);
     z-index: 100;
     backdrop-filter: blur(10px);
+    margin-bottom: var(--spacing-xl); // 2x of the title gap (var(--spacing-md) * 2)
 
     &:hover {
         opacity: 1;
@@ -26,11 +27,11 @@
     }
 
     .icon {
-        width: 18px;
-        height: 18px;
+        width: 24px;
+        height: 24px;
         display: inline-block;
 
-        svg {
+        img {
             width: 100%;
             height: 100%;
             fill: var(--color-primary);
@@ -47,3 +48,9 @@
     }
 }
 
+// Fade out hint when card is expanded
+.experience-container.has-expanded .hover-hint {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+}

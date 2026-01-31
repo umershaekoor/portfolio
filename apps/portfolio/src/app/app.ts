@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IntroComponent } from './intro/intro.component';
@@ -9,14 +9,52 @@ import { LanguageSwitcherComponent } from './shared/language-switcher/language-s
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  imports: [RouterModule, CommonModule, IntroComponent, ExperienceComponent, SkillsComponent, ContactComponent, LanguageSwitcherComponent, TranslateModule],
+  imports: [
+    RouterModule,
+    CommonModule,
+    IntroComponent,
+    ExperienceComponent,
+    SkillsComponent,
+    ContactComponent,
+    LanguageSwitcherComponent,
+    TranslateModule
+  ],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
+export class App implements OnInit, OnDestroy {
   activeSection = 'intro';
   isScrolled = false;
+  private titleInterval?: number;
+  private titles = ['voncode', 'Umer Shakoor'];
+  private currentTitleIndex = 0;
+
+  ngOnInit() {
+    // Scroll to top on page load to ensure intro section is visible
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Start title switching
+    this.startTitleRotation();
+  }
+
+  ngOnDestroy() {
+    // Clean up interval when component is destroyed
+    if (this.titleInterval) {
+      clearInterval(this.titleInterval);
+    }
+  }
+
+  private startTitleRotation() {
+    // Set initial title
+    document.title = this.titles[this.currentTitleIndex];
+
+    // Switch title every 5 seconds
+    this.titleInterval = window.setInterval(() => {
+      this.currentTitleIndex = (this.currentTitleIndex + 1) % this.titles.length;
+      document.title = this.titles[this.currentTitleIndex];
+    }, 5000);
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

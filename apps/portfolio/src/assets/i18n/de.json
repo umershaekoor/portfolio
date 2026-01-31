@@ -3,9 +3,19 @@
     "LOGO": "Portfolio",
     "FOOTER": "© 2025 Portfolio. Alle Rechte vorbehalten."
   },
-  "WELCOME_MESSAGE": "ich bin umer, willkommen auf meiner seite",
+  "FOOTER": {
+    "COLLABORATION_HUMAN": "Eine Mensch,",
+    "COLLABORATION_AI": "KI",
+    "COLLABORATION_TEXT": "Zusammenarbeit",
+    "LINKEDIN": "LinkedIn-Profil besuchen",
+    "XING": "Xing-Profil besuchen",
+    "FACEBOOK": "Facebook-Profil besuchen",
+    "INSTAGRAM": "Instagram-Profil besuchen"
+  },
+  "WELCOME_MESSAGE": "Hi, ich bin Umer :)",
+  "WELCOME_SUBTITLE": "Willkommen",
   "INTRO": {
-    "ROLE": "Softwareentwickler",
+    "ROLE": "Softwareentwickler mit einem Gespür für KI",
     "DESCRIPTION": "Ich entwickle Dinge für das Web.",
     "CTA_PRIMARY": "Kontakt aufnehmen",
     "CTA_SECONDARY": "Arbeiten ansehen",
@@ -28,6 +38,8 @@
   "EXPERIENCE": {
     "TITLE": "Meine Reise",
     "CLOSE": "Karte schließen",
+    "TAP_FOR_DETAILS": "Für Details tippen",
+    "HOVER_FOR_DETAILS": "Für Details schweben",
     "BERN": {
       "CITY": "Bern",
       "ROLE": "Senior Entwickler",
@@ -75,6 +87,10 @@
     }
   },
   "SKILLS": {
-    "TITLE": "Technische Fähigkeiten"
+    "TITLE": "Technische Fähigkeiten",
+    "OPEN": "Öffnen",
+    "SORT_BY": "Sortieren nach:",
+    "SORT_DATE": "Datum",
+    "SORT_STRENGTH": "Stärke"
   }
 }

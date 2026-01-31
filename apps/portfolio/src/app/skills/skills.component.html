@@ -1,14 +1,38 @@
 <div class="skills-container">
     <h2 class="section-title" appScrollReveal>{{ 'SKILLS.TITLE' | translate }}</h2>
+    <div class="sort-controls">
+        <span class="sort-label" [attr.title]="'SKILLS.SORT_BY' | translate">
+            <i class="fas fa-sort-amount-down"></i>
+        </span>
+        <button
+            class="sort-button"
+            [class.active]="sortBy() === 'date'"
+            (click)="setSortBy('date')"
+            [attr.aria-pressed]="sortBy() === 'date'"
+            [attr.aria-label]="'SKILLS.SORT_DATE' | translate"
+            [attr.title]="'SKILLS.SORT_DATE' | translate">
+            <i class="fas fa-calendar-alt"></i>
+        </button>
+        <button
+            class="sort-button"
+            [class.active]="sortBy() === 'strength'"
+            (click)="setSortBy('strength')"
+            [attr.aria-pressed]="sortBy() === 'strength'"
+            [attr.aria-label]="'SKILLS.SORT_STRENGTH' | translate"
+            [attr.title]="'SKILLS.SORT_STRENGTH' | translate">
+            <i class="fas fa-chart-bar"></i>
+        </button>
+    </div>
     <div class="skills-grid">
         <a [href]="skill.url"
            target="_blank"
            rel="noopener noreferrer"
            class="skill-card"
            appScrollReveal
-           *ngFor="let skill of skills; trackBy: trackByName"
+           *ngFor="let skill of skills(); trackBy: trackByName"
            [style.--icon-color]="skill.color"
-           [attr.aria-label]="'Learn more about ' + skill.name">
+           [attr.aria-label]="'Learn more about ' + skill.name"
+           [attr.title]="getSkillTooltip(skill.name)">
             <div class="icon">
                 <i [class]="skill.icon"></i>
             </div>

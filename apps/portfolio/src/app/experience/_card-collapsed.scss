@@ -23,10 +23,18 @@
     gap: var(--spacing-lg);
     padding: calc(var(--spacing-sm) + 5px) var(--spacing-md); // Reverted to original desktop padding
     align-items: center;
-    transition: opacity var(--transition-fast);
+    transition: opacity var(--transition-fast), filter var(--transition-fast);
     border-radius: var(--radius-lg);
     overflow: hidden;
     position: relative;
+}
+
+// Mobile optimization - fast smooth transitions for immediate feedback
+@media (max-width: 767px) {
+    .card-collapsed {
+        transition: opacity 0.1s ease-out, filter 0.1s ease-out;
+        will-change: opacity, filter;
+    }
 }
 
 .location-summary {

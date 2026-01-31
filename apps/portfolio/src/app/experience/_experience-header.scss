@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 0; // Remove default margin, spacing handled by children
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -18,7 +18,7 @@
     @include section-title;
 
     & {
-        margin-bottom: 0;
+        margin-bottom: var(--spacing-md); // 0.5x of the gap between hint and timeline
     }
 }
 

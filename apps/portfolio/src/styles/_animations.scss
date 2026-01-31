@@ -119,6 +119,7 @@
   }
 }
 
+
 // Pulse Opacity
 @keyframes pulseOpacity {
   0%, 100% {
@@ -158,6 +159,42 @@
   100% {
     opacity: 0;
     top: 24px;
+  }
+}
+
+// Handwriting Fade In (smooth appearing text)
+@keyframes handwritingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+// Character Fade In (for letter-by-letter animation)
+@keyframes charFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Fade In Place (no movement, just fade)
+@keyframes fadeInPlace {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

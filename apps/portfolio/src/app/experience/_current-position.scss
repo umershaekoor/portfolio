@@ -14,7 +14,7 @@
     &::after {
         background: linear-gradient(135deg, var(--color-success) 0%, #10b981 100%);
         border-color: var(--color-bg-primary);
-        box-shadow: none;
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
         animation: none;
     }
 
@@ -22,6 +22,16 @@
     .card-shell {
         border-color: rgba(34, 197, 94, 0.4);
         box-shadow: 0 30px 60px rgba(34, 197, 94, 0.25);
+
+        // Ensure green shadow on hover/focus
+        &:hover {
+            box-shadow: 0 35px 70px rgba(34, 197, 94, 0.35);
+        }
+    }
+
+    // Focus state with green shadow
+    &:focus-visible .card-shell {
+        box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.35);
     }
 
     // Green map marker

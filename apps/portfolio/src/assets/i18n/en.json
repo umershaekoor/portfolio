@@ -3,9 +3,19 @@
     "LOGO": "Portfolio",
     "FOOTER": "© 2025 Portfolio. All rights reserved."
   },
-  "WELCOME_MESSAGE": "im umer, welcome to my page",
+  "FOOTER": {
+    "COLLABORATION_HUMAN": "A Human,",
+    "COLLABORATION_AI": "AI",
+    "COLLABORATION_TEXT": "Collaboration",
+    "LINKEDIN": "Visit LinkedIn Profile",
+    "XING": "Visit Xing Profile",
+    "FACEBOOK": "Visit Facebook Profile",
+    "INSTAGRAM": "Visit Instagram Profile"
+  },
+  "WELCOME_MESSAGE": "Hi, I'm Umer :)",
+  "WELCOME_SUBTITLE": "Welcome",
   "INTRO": {
-    "ROLE": "Software Engineer",
+    "ROLE": "Software Engineer with a flair for AI",
     "DESCRIPTION": "I build things for the web.",
     "CTA_PRIMARY": "Get in Touch",
     "CTA_SECONDARY": "View Work",
@@ -28,6 +38,8 @@
   "EXPERIENCE": {
     "TITLE": "My Journey",
     "CLOSE": "Close card",
+    "TAP_FOR_DETAILS": "Tap for details",
+    "HOVER_FOR_DETAILS": "Hover for details",
     "BERN": {
       "CITY": "Bern",
       "ROLE": "Senior Developer",
@@ -75,6 +87,10 @@
     }
   },
   "SKILLS": {
-    "TITLE": "Technical Skills"
+    "TITLE": "Technical Skills",
+    "OPEN": "Open",
+    "SORT_BY": "Sort by:",
+    "SORT_DATE": "Date",
+    "SORT_STRENGTH": "Strength"
   }
 }

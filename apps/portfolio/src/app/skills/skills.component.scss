@@ -7,14 +7,86 @@
 // ============================================
 
 .skills-container {
-  padding: var(--spacing-4xl) var(--spacing-xl);
+  padding: var(--spacing-3xl) var(--spacing-xl);
   background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  // ...existing code...
   color: var(--color-text-primary);
   text-align: center;
 
   .section-title {
     @include section-title;
+
+    & {
+      margin-bottom: var(--spacing-md);
+    }
   }
+
+  .sort-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+
+    .sort-label {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-muted);
+      margin-right: var(--spacing-xs);
+      cursor: help;
+      transition: color var(--transition-base);
+
+      &:hover {
+        color: var(--color-text-secondary);
+      }
+
+      i {
+        display: block;
+      }
+    }
+
+    .sort-button {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 52, 96, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-lg);
+      cursor: pointer;
+      transition: all var(--transition-base);
+
+      i {
+        transition: all var(--transition-base);
+      }
+
+      &:hover {
+        background: rgba(15, 52, 96, 0.5);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: var(--color-text-primary);
+        transform: translateY(-2px);
+      }
+
+      &.active {
+        background: var(--gradient-primary);
+        border-color: var(--color-primary);
+        color: var(--color-text-primary);
+
+        i {
+          transform: scale(1.1);
+        }
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+      }
+    }
+  }
+
 
   .skills-grid {
     @include grid-auto-fit(200px, var(--spacing-lg));
@@ -30,6 +102,7 @@
       color: inherit; // Inherit text color
       display: block; // Make anchor behave like block element
       transition: all var(--transition-base);
+      box-shadow: var(--shadow-md); // Ensure consistent base shadow
 
       .icon {
         font-size: var(--font-size-xl);
@@ -45,7 +118,7 @@
       &:hover {
         @include hover-lift;
         transform: translateY(-8px) scale(1.02); // Enhanced lift effect
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); // Stronger shadow
+        box-shadow: var(--shadow-lg); // Use consistent shadow variable
 
         .icon {
           color: var(--icon-color, var(--color-primary));
@@ -56,6 +129,7 @@
 
       &:active {
         transform: translateY(-6px) scale(1.01); // Slight press effect
+        box-shadow: var(--shadow-md); // Return to base shadow on press
       }
 
       h3 {
@@ -88,18 +162,77 @@
 
 @include breakpoint('md') {
   .skills-container {
-    padding: var(--spacing-3xl) var(--spacing-lg);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+
+    .section-title {
+      margin-bottom: var(--spacing-lg); // 0.5x of the gap between controls and grid
+    }
+
+    .sort-controls {
+      margin-bottom: var(--spacing-3xl); // 2x of the title gap (var(--spacing-lg) * 2)
+
+      .sort-label {
+        font-size: var(--font-size-sm);
+      }
+
+      .sort-button {
+        width: 32px;
+        height: 32px;
+        font-size: var(--font-size-sm);
+      }
+    }
   }
 
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-    gap: var(--spacing-lg) !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+
+    .skill-card {
+      // Ensure consistent box-shadow on mobile (no weird square shadow)
+      box-shadow: var(--shadow-md);
+
+      &:hover,
+      &:active {
+        // On mobile, maintain consistent shadow (hover may not work well on touch)
+        box-shadow: var(--shadow-md);
+      }
+    }
   }
 }
 
 @include breakpoint('sm') {
+  .skills-container {
+    .section-title {
+      margin-bottom: var(--spacing-md); // 0.5x of the gap between controls and grid
+    }
+
+    .sort-controls {
+      margin-bottom: var(--spacing-2xl); // 2x of the title gap (var(--spacing-md) * 2)
+
+      .sort-label {
+        font-size: var(--font-size-xs);
+      }
+
+      .sort-button {
+        width: 28px;
+        height: 28px;
+        font-size: var(--font-size-xs);
+      }
+    }
+  }
+
   .skills-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
+
+    .skill-card {
+      // Ensure consistent box-shadow on small mobile devices
+      box-shadow: var(--shadow-md);
+
+      &:hover,
+      &:active {
+        box-shadow: var(--shadow-md);
+      }
+    }
   }
 }
 

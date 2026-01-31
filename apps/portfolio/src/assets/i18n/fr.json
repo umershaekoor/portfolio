@@ -3,9 +3,19 @@
     "LOGO": "Portfolio",
     "FOOTER": "© 2025 Portfolio. Tous droits réservés."
   },
-  "WELCOME_MESSAGE": "je suis umer, bienvenue sur ma page",
+  "FOOTER": {
+    "COLLABORATION_HUMAN": "Une Collaboration Humain,",
+    "COLLABORATION_AI": "IA",
+    "COLLABORATION_TEXT": "",
+    "LINKEDIN": "Visiter le profil LinkedIn",
+    "XING": "Visiter le profil Xing",
+    "FACEBOOK": "Visiter le profil Facebook",
+    "INSTAGRAM": "Visiter le profil Instagram"
+  },
+  "WELCOME_MESSAGE": "Salut, je suis Umer :)",
+  "WELCOME_SUBTITLE": "Bienvenue",
   "INTRO": {
-    "ROLE": "Ingénieur Logiciel",
+    "ROLE": "Ingénieur Logiciel avec un flair pour l'IA",
     "DESCRIPTION": "Je construis des choses pour le web.",
     "CTA_PRIMARY": "Me contacter",
     "CTA_SECONDARY": "Voir mon travail",
@@ -28,6 +38,8 @@
   "EXPERIENCE": {
     "TITLE": "Mon Parcours",
     "CLOSE": "Fermer la carte",
+    "TAP_FOR_DETAILS": "Appuyez pour les détails",
+    "HOVER_FOR_DETAILS": "Survolez pour les détails",
     "BERN": {
       "CITY": "Berne",
       "ROLE": "Développeur Senior",
@@ -75,6 +87,10 @@
     }
   },
   "SKILLS": {
-    "TITLE": "Compétences Techniques"
+    "TITLE": "Compétences Techniques",
+    "OPEN": "Ouvrir",
+    "SORT_BY": "Trier par:",
+    "SORT_DATE": "Date",
+    "SORT_STRENGTH": "Force"
   }
 }

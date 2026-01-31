@@ -1,10 +1,12 @@
 // ============================================
 // Experience Container Base Styles
 // ============================================
+@use '../../styles/mixins' as *;
 
 .experience-container {
-    padding: var(--spacing-4xl) var(--spacing-xl);
-    min-height: 100vh;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    min-height: 100dvh;
+    // ...existing code...
     background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
     color: var(--color-text-primary);
     position: relative;
@@ -17,3 +19,12 @@
     }
 }
 
+// ============================================
+// Mobile Fix: Reset positioning when expanded
+// ============================================
+
+@media (max-width: 767px) {
+    .experience-container.has-expanded {
+        position: static;
+    }
+}

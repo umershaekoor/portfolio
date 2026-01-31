@@ -1,5 +1,5 @@
 // ============================================
-// Experience Cards - Expanded State (Overlay)
+// Experience Cards - Expanded State (Desktop)
 // ============================================
 
 .card-expanded {
@@ -7,9 +7,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) translateY(20px);
-    width: min(600px, 85vw);
+    width: min(600px, 85dvw);
     max-width: 600px;
-    max-height: 70vh;
+    max-height: 70dvh;
     padding: var(--spacing-2xl);
     background: rgba(7, 12, 24, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -18,6 +18,8 @@
     opacity: 0;
     overflow-y: auto;
     transition: opacity var(--transition-base), transform var(--transition-base);
+    // Keep pointer-events: none so the expanded card doesn't interfere with hover detection
+    // The hover should only trigger from the collapsed card area
     pointer-events: none;
     z-index: 20;
 
@@ -72,6 +74,21 @@
         margin-top: 0;
         color: var(--color-text-secondary);
         line-height: var(--line-height-relaxed);
+    }
+}
+
+// Desktop-specific expanded state (hover)
+// When expanded, enable pointer-events to allow scrolling and interaction
+.timeline-item.expanded-desktop .card-expanded {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+}
+
+// Left timeline items - move map to left side
+.timeline-item.left .card-expanded {
+    .card-header {
+        flex-direction: row-reverse;
     }
 }
 

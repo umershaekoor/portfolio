@@ -48,9 +48,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-size: var(--font-size-base);
+  gap: clamp(0.25rem, 1vw, var(--spacing-sm));
+  padding: clamp(0.5rem, 2vw, var(--spacing-md)) clamp(1rem, 3vw, var(--spacing-xl));
+  font-size: clamp(0.875rem, 2vw, var(--font-size-base));
   font-weight: var(--font-weight-semibold);
   font-family: inherit;
   border: none;
@@ -137,7 +137,7 @@
 
 // Section Container
 @mixin section-container {
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: var(--spacing-4xl) var(--spacing-xl);
   max-width: 1200px;
   margin: 0 auto;
@@ -147,6 +147,12 @@
 
   @include breakpoint('md') {
     padding: var(--spacing-3xl) var(--spacing-lg);
+    min-height: auto;
+  }
+
+  @include breakpoint('sm') {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    min-height: auto;
   }
 }
 

@@ -11,6 +11,7 @@
   </nav>
 </header>
 
+
 <main class="portfolio-container">
   <section id="intro">
     <app-intro></app-intro>
@@ -26,6 +27,27 @@
   </section>
 </main>
 
-<footer>
-  <p>{{ 'APP.FOOTER' | translate }}</p>
+<footer class="footer">
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/umer-shakoor-21038b113" target="_blank" rel="noopener noreferrer" class="social-icon" [attr.aria-label]="'FOOTER.LINKEDIN' | translate">
+      <img src="assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+    </a>
+    <a href="https://www.xing.com/profile/Umer_Shakoor" target="_blank" rel="noopener noreferrer" class="social-icon" [attr.aria-label]="'FOOTER.XING' | translate">
+      <img src="assets/icons/xing.svg" alt="Xing" width="24" height="24">
+    </a>
+    <a href="https://www.facebook.com/share/1KUhHVNNmg/" target="_blank" rel="noopener noreferrer" class="social-icon" [attr.aria-label]="'FOOTER.FACEBOOK' | translate">
+      <img src="assets/icons/facebook.svg" alt="Facebook" width="24" height="24">
+    </a>
+    <a href="https://www.instagram.com/umer_shakoor?igsh=MXN4bXB4aWtrYm5sdw==" target="_blank" rel="noopener noreferrer" class="social-icon" [attr.aria-label]="'FOOTER.INSTAGRAM' | translate">
+      <img src="assets/icons/instagram.svg" alt="Instagram" width="24" height="24">
+    </a>
+  </div>
+  <div class="collaboration-text">
+    <span>{{ 'FOOTER.COLLABORATION_HUMAN' | translate }}</span>
+    <img class="human-icon" src="assets/icons/human.svg" alt="Human" width="20" height="20">
+    <span>{{ 'FOOTER.COLLABORATION_AI' | translate }}</span>
+    <img class="robot-icon" src="assets/icons/robot.svg" alt="AI" width="20" height="20">
+    <span>{{ 'FOOTER.COLLABORATION_TEXT' | translate }}</span>
+  </div>
+  <p class="copyright">{{ 'APP.FOOTER' | translate }}</p>
 </footer>

@@ -9,7 +9,10 @@ import { Language } from '../../core/models/portfolio.models';
   template: `
     <div class="custom-select-container" [class.open]="isOpen">
       <div class="custom-select-button" (click)="toggleDropdown()" tabindex="0" (keydown.enter)="toggleDropdown()" (keydown.space)="toggleDropdown()" [attr.aria-expanded]="isOpen" role="combobox">
-        <span class="selected-value">{{ selectedLanguage?.flag }} {{ selectedLanguage?.label }}</span>
+        <span class="selected-value">
+          <span class="flag">{{ selectedLanguage?.flag }}</span>
+          <span class="label">{{ selectedLanguage?.label }}</span>
+        </span>
         <span class="arrow" [class.rotate]="isOpen">▼</span>
       </div>
       <ul class="custom-select-dropdown" *ngIf="isOpen" role="listbox">
@@ -20,7 +23,8 @@ import { Language } from '../../core/models/portfolio.models';
             tabindex="0"
             role="option"
             [attr.aria-selected]="lang.code === currentLang">
-          {{ lang.flag }} {{ lang.label }}
+          <span class="flag">{{ lang.flag }}</span>
+          <span class="label">{{ lang.label }}</span>
         </li>
       </ul>
     </div>
@@ -48,19 +52,26 @@ import { Language } from '../../core/models/portfolio.models';
       transition: all var(--transition-base);
       user-select: none;
 
-      &:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(255, 255, 255, 0.2);
-      }
-
       &:focus {
         outline: 2px solid var(--color-primary);
         outline-offset: 2px;
+      }
+
+      // Hover state only on devices with hover capability (desktop)
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.2);
+        }
       }
     }
 
     .selected-value {
       flex: 1;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      white-space: nowrap;
     }
 
     .arrow {
@@ -90,16 +101,24 @@ import { Language } from '../../core/models/portfolio.models';
       animation: slideDown 0.2s ease-out;
 
       li {
-        padding: var(--spacing-sm) var(--spacing-md);
+        padding: var(--spacing-xs) var(--spacing-sm);
         color: var(--color-text-primary);
         cursor: pointer;
         transition: all var(--transition-fast);
         font-size: var(--font-size-xs);
         font-weight: var(--font-weight-medium);
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
 
-        &:hover {
-          background: rgba(233, 69, 96, 0.1);
-          color: var(--color-primary);
+        .flag {
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .label {
+          display: inline-flex;
+          align-items: center;
         }
 
         &.selected {
@@ -111,6 +130,18 @@ import { Language } from '../../core/models/portfolio.models';
           outline: 2px solid var(--color-primary);
           outline-offset: -2px;
           background: rgba(233, 69, 96, 0.1);
+        }
+
+        // Hover states only on devices with hover capability (desktop)
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            background: rgba(233, 69, 96, 0.1);
+            color: var(--color-primary);
+          }
+
+          &.selected:hover {
+            background: rgba(233, 69, 96, 0.2);
+          }
         }
       }
     }
