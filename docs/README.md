@@ -48,13 +48,13 @@ docs/
 
 ```bash
 # Deploy the application
-./deploy.sh
+cd deployment/scripts && ./deploy.sh
 
 # Setup nginx (one-time)
-./setup-nginx.sh
+cd deployment/scripts && ./setup-nginx.sh
 
 # Setup subdomain (one-time)
-./setup-subdomain.sh
+cd deployment/scripts && ./setup-subdomain.sh
 ```
 
 ---
@@ -261,11 +261,18 @@ du -sh docs/
 ## 🔗 Related Files in Root
 
 - **README.md** - Main project README
-- **deploy.sh** - Deployment script
-- **setup-nginx.sh** - Nginx setup script
-- **setup-subdomain.sh** - Subdomain setup script
-- **nginx-portfolio.conf** - Nginx configuration template
-- **nginx-portfolio-subdomain.conf** - Subdomain nginx config
+
+### Deployment Files (Organized)
+All deployment-related files are now in `deployment/`:
+- **deployment/README.md** - Complete deployment documentation
+- **deployment/scripts/** - All deployment scripts
+  - `deploy.sh` - Main deployment script
+  - `setup-nginx.sh` - Nginx setup script
+  - `setup-subdomain.sh` - Subdomain setup script
+- **deployment/nginx-configs/** - All nginx configurations
+  - `nginx-portfolio.conf` - Main domain config
+  - `nginx-portfolio-subdomain.conf` - Subdomain config
+- **deployment/history/** - Historical deployment documentation
 
 ---
 

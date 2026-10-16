@@ -42,10 +42,11 @@ npx nx build portfolio
 To deploy to the production server:
 
 ```sh
+cd docs/deployment/scripts
 ./deploy.sh
 ```
 
-See [Deployment Guide](docs/deployment/DEPLOYMENT.md) for detailed instructions.
+See [Deployment Guide](docs/deployment/README.md) for detailed instructions.
 
 ---
 
